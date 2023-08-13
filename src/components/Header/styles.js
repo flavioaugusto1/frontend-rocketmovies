@@ -4,6 +4,8 @@ export const Container = styled.header`
   width: 100%;
   height: 11.6rem;
 
+  grid-area: header;
+
   display: grid;
   grid-template-columns: auto 63rem auto;
   justify-content: space-evenly;

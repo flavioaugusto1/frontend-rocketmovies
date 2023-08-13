@@ -4,8 +4,6 @@ export const Container = styled.button`
   width: 100%;
   height: 5.6rem;
   
-  margin-top: 2.4rem;
-
   background: ${({ theme }) => theme.COLORS.PINK};
 
   border: none;

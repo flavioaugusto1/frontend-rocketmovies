@@ -33,6 +33,10 @@ export const Form = styled.form`
     }
   }
 
+  > button {
+    margin-top: 2.4rem;
+  }
+
   > h2 {
     font-size: 2.4rem;
     font-weight: 500;
