@@ -13,7 +13,7 @@ export const Container = styled.header`
 
   > h1 {
     font-size: 2.4rem;
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_PINK};
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BORDER_GRAY};;

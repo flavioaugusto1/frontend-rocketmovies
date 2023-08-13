@@ -75,6 +75,8 @@ export const Content = styled.div`
 
       font-size: 1.6rem;
       color: ${({ theme }) => theme.COLORS.GRAY_200};
+
+      margin-bottom: 2rem;
     }
   }
 `;

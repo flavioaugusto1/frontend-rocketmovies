@@ -18,7 +18,15 @@ export function Home() {
 
       <Content>
         <main>
-          <Note title="Interstellar">
+          <Note
+            data={{
+              title: "Interstellar",
+              tags: [
+                { id: 1, name: "Sci-fi" },
+                { id: 2, name: "Christopher Nolan" },
+              ],
+            }}
+          >
             <p>
               Pragas nas colheitas fizeram a civilização humana regredir para
               uma sociedade agrária em futuro de data desconhecida. Cooper,
@@ -28,7 +36,13 @@ export function Home() {
               filha descobrem que o "fantasma" é uma inteligência desconhecida.
             </p>
           </Note>
-          <Note title="Harry Potter e a Câmara Secreta">
+
+          <Note
+            data={{
+              title: "Harry Potter e a Câmara Secreta",
+              tags: [{ id: 1, name: "Fantasia" }],
+            }}
+          >
             <p>
               Harry Potter e a Câmara Secreta é o segundo livro da série de J.K.
               Rowling12. A história se passa na Escola de Magia e Bruxaria de
@@ -42,14 +56,29 @@ export function Home() {
               aventura3.
             </p>
           </Note>
-          <Note title="A Origem">
+
+          <Note
+            data={{
+              title: "A Origem",
+              tags: [
+                { id: 1, name: "Sci-fi" },
+                { id: 2, name: "Christopher Nolan" },
+              ],
+            }}
+          >
             <p>
               A Origem é um filme de ficção científica que conta a história de
               como um grupo de golpistas utiliza uma "máquina de invadir sonhos"
               para poder conquistar os seus objetivos mais audaciosos1.
             </p>
           </Note>
-          <Note title="Os Suspeitos">
+
+          <Note
+            data={{
+              title: "Os suspeitos",
+              tags: [{ id: 1, name: "Suspense" }],
+            }}
+          >
             <p>
               Ambientada em Boston, a história gira em torno do carpinteiro
               Keller Dover (Jackman), que está vivendo um pesadelo como pai: a
