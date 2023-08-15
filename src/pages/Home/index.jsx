@@ -19,6 +19,7 @@ export function Home() {
       <Content>
         <main>
           <Note
+            isFilled
             data={{
               title: "Interstellar",
               tags: [
@@ -38,6 +39,7 @@ export function Home() {
           </Note>
 
           <Note
+            isFilled
             data={{
               title: "Harry Potter e a Câmara Secreta",
               tags: [{ id: 1, name: "Fantasia" }],
@@ -58,6 +60,7 @@ export function Home() {
           </Note>
 
           <Note
+            isFilled
             data={{
               title: "A Origem",
               tags: [
@@ -74,6 +77,7 @@ export function Home() {
           </Note>
 
           <Note
+            isFilled
             data={{
               title: "Os suspeitos",
               tags: [{ id: 1, name: "Suspense" }],
