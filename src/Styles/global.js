@@ -8,7 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
   }
-
+  
   :root{
     font-size: 62.5%;
   }

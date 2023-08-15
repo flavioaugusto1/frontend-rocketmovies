@@ -16,6 +16,7 @@ export const Container = styled.div`
   margin-bottom: .6rem;
 
   > input {
+    font-size: 1.6rem;
     width: 100%;
     height: 5.6rem;
 
@@ -23,7 +24,7 @@ export const Container = styled.div`
     background: transparent;
     outline: none;
 
-    color: ${({ theme }) => theme.COLORS.GRAY_200};
+    color: ${({ theme }) => theme.COLORS.WHITE};
 
     &::placeholder{
       font-size: 1.6rem;
