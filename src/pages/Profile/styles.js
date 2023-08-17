@@ -9,6 +9,15 @@ export const Container = styled.div`
 
     width: 100%;
     height: 14.4rem;
+
+    a{
+      text-decoration: none;
+    }
+
+    button {
+      padding-top: 6.4rem;
+      margin-left: 14rem;
+    }
   }
 `;
 

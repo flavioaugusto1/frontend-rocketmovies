@@ -31,6 +31,10 @@ export const Content = styled.div`
 
   padding-right: 2.4rem;
 
+  a {
+    text-decoration: none;
+  }
+
   > button {
     font-size: 1.6rem;
     display: flex;
@@ -93,9 +97,8 @@ export const Form = styled.form`
     }
   }
 
-  .delete{
+  .delete {
     background: ${({ theme }) => theme.COLORS.BLACK};
     color: ${({ theme }) => theme.COLORS.PINK};
   }
-
 `;

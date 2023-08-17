@@ -6,11 +6,15 @@ import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
+import { Link } from "react-router-dom";
+
 export function Profile() {
   return (
     <Container>
       <header>
-        <ButtonText title="Voltar" />
+        <Link to="/">
+          <ButtonText title="Voltar" />
+        </Link>
       </header>
 
       <Form>

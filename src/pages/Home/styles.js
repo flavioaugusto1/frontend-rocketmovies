@@ -28,21 +28,24 @@ export const Title = styled.div`
     font-weight: 400;
   }
 
-  > button {
-    width: 20rem;
-    padding: 1.3rem auto;
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  a {
+    text-decoration: none;
+    > button {
+      width: 20rem;
+      padding: 1.3rem auto;
+      color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
   }
 `;
 
 export const Content = styled.div`
   grid-area: content;
-  
+
   height: 71rem;
   max-width: 113.7rem;
   margin: 0 auto;
@@ -64,6 +67,19 @@ export const Content = styled.div`
 
   > main {
     padding-right: 1.6rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    > div {
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.9);
+        transition: 0.4s ease;
+      }
+    }
 
     p {
       text-overflow: ellipsis;

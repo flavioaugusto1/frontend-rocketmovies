@@ -6,6 +6,7 @@ import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
 
 export function New() {
   return (
@@ -13,7 +14,9 @@ export function New() {
       <Header />
 
       <Content>
-        <ButtonText title="Voltar" />
+        <Link to="/">
+          <ButtonText title="Voltar" />
+        </Link>
         <h1>Novo Filme</h1>
         <Form>
           <Input placeholder="Título" />
@@ -24,16 +27,16 @@ export function New() {
           <section>
             <h2>Marcadores</h2>
             <div>
-              <NoteItem placeholder="Novo marcador" value="Fantasia"/>
-              <NoteItem placeholder="Novo marcador" value="Fantasia"/>
-              <NoteItem placeholder="Novo marcador" value="Fantasia"/>
-              <NoteItem placeholder="Novo marcador" value="Fantasia"/>
-              <NoteItem isNew placeholder="Novo marcador"/>
+              <NoteItem placeholder="Novo marcador" value="Fantasia" />
+              <NoteItem placeholder="Novo marcador" value="Fantasia" />
+              <NoteItem placeholder="Novo marcador" value="Fantasia" />
+              <NoteItem placeholder="Novo marcador" value="Fantasia" />
+              <NoteItem isNew placeholder="Novo marcador" />
             </div>
           </section>
 
-          <Button title="Excluir filme" className="delete"/>
-          <Button title=" Salvar alterações"/>
+          <Button title="Excluir filme" className="delete" />
+          <Button title=" Salvar alterações" />
         </Form>
       </Content>
     </Container>

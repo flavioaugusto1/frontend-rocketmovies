@@ -5,6 +5,7 @@ import { Header } from "../../components/Header";
 import { Stars } from "../../components/Stars";
 import { ButtonText } from "../../components/ButtonText";
 import { Tags } from "../../components/Tags";
+import { Link } from "react-router-dom";
 
 export function Details() {
   return (
@@ -12,7 +13,9 @@ export function Details() {
       <Header />
       <Content>
         <header>
-          <ButtonText title="Voltar" />
+          <Link to="/">
+            <ButtonText title="Voltar" />
+          </Link>
 
           <Title>
             <h1>Interstellar</h1>
