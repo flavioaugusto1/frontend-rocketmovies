@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
-import { FiStar } from "react-icons/fi";
-
 import { Container, Image } from "./styles";
 
 import { Tags } from "../Tags";
 
-export function Note({ data, children, isFilled, ...rest }) {
+import { Stars } from "../Stars";
+
+export function Note({ data, children, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
-      <Image isFilled={isFilled}>
-        <FiStar />
-        <FiStar />
-        <FiStar />
-        <FiStar />
-        <FiStar />
+      <Image>
+        <Stars isFilled />
+        <Stars isFilled/>
+        <Stars isFilled/>
+        <Stars isFilled/>
+        <Stars />
       </Image>
 
       {children}

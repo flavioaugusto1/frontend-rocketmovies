@@ -19,11 +19,6 @@ export const Image = styled.div`
 
   margin-bottom: 1.5rem;
 
-  > svg {
-    font-size: 1.2rem;
-    margin-right: 0.6rem;
-    color: ${({ theme }) => theme.COLORS.PINK};
-    fill: ${({ theme, isFilled }) =>
-      isFilled ? theme.COLORS.PINK : "transparent"};
-  }
+  display: flex;
+  align-items: center;
 `;
