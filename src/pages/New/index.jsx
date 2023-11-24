@@ -17,27 +17,30 @@ export function New() {
         <Link to="/">
           <ButtonText title="Voltar" />
         </Link>
-        <h1>Novo Filme</h1>
-        <Form>
-          <Input placeholder="Título" />
-          <Input placeholder="Sua nota de (0 a 5)" />
 
-          <TextArea placeholder="Observações" />
+        <div className="wrap">
+          <h1>Novo Filme</h1>
+          <Form>
+            <Input placeholder="Título" />
+            <Input placeholder="Sua nota de (0 a 5)" />
 
-          <section>
-            <h2>Marcadores</h2>
-            <div>
-              <NoteItem placeholder="Novo marcador" value="Fantasia" />
-              <NoteItem placeholder="Novo marcador" value="Fantasia" />
-              <NoteItem placeholder="Novo marcador" value="Fantasia" />
-              <NoteItem placeholder="Novo marcador" value="Fantasia" />
-              <NoteItem isNew placeholder="Novo marcador" />
-            </div>
-          </section>
+            <TextArea placeholder="Observações" />
 
-          <Button title="Excluir filme" className="delete" />
-          <Button title=" Salvar alterações" />
-        </Form>
+            <section>
+              <h2>Marcadores</h2>
+              <div>
+                <NoteItem placeholder="Novo marcador" value="Fantasia" />
+                <NoteItem placeholder="Novo marcador" value="Fantasia" />
+                <NoteItem placeholder="Novo marcador" value="Fantasia" />
+                <NoteItem placeholder="Novo marcador" value="Fantasia" />
+                <NoteItem isNew placeholder="Novo marcador" />
+              </div>
+            </section>
+
+            <Button title="Excluir filme" className="delete" />
+            <Button title=" Salvar alterações" />
+          </Form>
+        </div>
       </Content>
     </Container>
   );

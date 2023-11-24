@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
 
 export const AuthContext = createContext({});
@@ -13,6 +13,9 @@ function AuthProvider({ children }) {
 
       api.defaults.headers.authorization = `Bearer ${token}`;
 
+      localStorage.setItem("@rocketmovies:user", JSON.stringify(user));
+      localStorage.setItem("@rocketmovies:token", token);
+
       setData({ user, token });
     } catch (error) {
       if (error.response) {
@@ -22,6 +25,19 @@ function AuthProvider({ children }) {
       }
     }
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem("@rocketmovies:token");
+    const user = localStorage.getItem("@rocketmovies:user");
+
+    if (token && user) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
+      setData({
+        token,
+        user: JSON.parse(user),
+      });
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={{ signIn, user: data.user }}>

@@ -12,41 +12,42 @@ export const Container = styled.div`
 export const Content = styled.div`
   margin-top: 4.6rem;
 
-  max-width: 114rem;
-  max-height: 78.3rem;
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.COLORS.PINK};
-    border-radius: 8px;
-  }
-
-  padding-right: 2.4rem;
-
   a {
     text-decoration: none;
   }
 
-  > button {
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .wrap {
+    max-height: 78.3rem;
+    overflow: auto;
 
-    cursor: pointer;
-  }
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
 
-  > h1 {
-    font-size: 3.6rem;
-    margin: 2.4rem 0 4rem 0;
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PINK};
+      border-radius: 8px;
+    }
+
+    padding-right: 2.4rem;
+
+    > button {
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+    }
+
+    > h1 {
+      font-size: 3.6rem;
+      margin: 2.4rem 0 4rem 0;
+    }
   }
 `;
 

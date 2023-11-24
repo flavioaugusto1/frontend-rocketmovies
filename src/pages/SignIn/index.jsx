@@ -21,7 +21,7 @@ export function SignIn() {
     <Container>
       <Form>
         <header>
-          <h1>Movies</h1>
+          <h1>Rocket Movies</h1>
           <p>Aplicação para acompanhar tudo que assistir</p>
         </header>
 
