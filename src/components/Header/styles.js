@@ -18,32 +18,34 @@ export const Container = styled.header`
   }
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BORDER_GRAY};
+
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    .user {
+      text-align: right;
+
+      p {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+      }
+
+      a {
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: ${({ theme }) => theme.COLORS.GRAY_200};
+        cursor: pointer;
+      }
+    }
+  }
 `;
 
 export const Profile = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-
-  color: ${({ theme }) => theme.COLORS.WHITE};
-  text-decoration: none;
-
-
-  > div {
-    text-align: right;
-
-    p {
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-
-    a {
-      font-size: 1.4rem;
-      text-decoration: none;
-      color: ${({ theme }) => theme.COLORS.GRAY_200};
-    }
-  }
-
   > img {
     width: 6.4rem;
     height: 6.4rem;
