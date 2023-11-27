@@ -33,9 +33,16 @@ function AuthProvider({ children }) {
     setData({});
   }
 
-  async function updateProfile({ user }) {
+  async function updateProfile({ user, avatarFile }) {
     try {
-      console.log(user);
+      if (avatarFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
+
+        const response = await api.patch("/user/avatar", fileUploadForm);
+        user.avatar = response.data.avatar;
+      }
+
       await api.put("/user/update", user);
 
       localStorage.setItem("@rocketmovies:user", JSON.stringify(user));

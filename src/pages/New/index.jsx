@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Content, Form } from "./styles";
 
 import { Header } from "../../components/Header";
@@ -9,6 +10,18 @@ import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
 export function New() {
+  const [tags, setTags] = useState([]);
+  const [newLink, setNewLink] = useState("");
+
+  function handleAddTag() {
+    setTags((prevState) => [...prevState, newLink]);
+    setNewLink("");
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+  }
+
   return (
     <Container>
       <Header />
@@ -29,11 +42,20 @@ export function New() {
             <section>
               <h2>Marcadores</h2>
               <div>
-                <NoteItem placeholder="Novo marcador" value="Fantasia" />
-                <NoteItem placeholder="Novo marcador" value="Fantasia" />
-                <NoteItem placeholder="Novo marcador" value="Fantasia" />
-                <NoteItem placeholder="Novo marcador" value="Fantasia" />
-                <NoteItem isNew placeholder="Novo marcador" />
+                {tags.map((tag, index) => (
+                  <NoteItem
+                    key={String(index)}
+                    value={tag}
+                    onClick={() => handleRemoveTag(tag)}
+                  />
+                ))}
+                <NoteItem
+                  isNew
+                  placeholder="Novo marcador"
+                  value={newLink}
+                  onChange={(e) => setNewLink(e.target.value)}
+                  onClick={handleAddTag}
+                />
               </div>
             </section>
 
