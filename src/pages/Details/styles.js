@@ -10,8 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-
-  max-width: 113.7rem;
+  width: 113.7rem;
   margin-top: 4rem;
 
   padding: 2rem;
@@ -35,13 +34,13 @@ export const Content = styled.div`
 
         font-size: 1.5rem;
 
-        img {
+        > img {
           width: 1.8rem;
           height: 1.8rem;
           border-radius: 50%;
         }
 
-        > svg{
+        > svg {
           color: ${({ theme }) => theme.COLORS.PINK};
           font-size: 1.6rem;
         }
@@ -49,7 +48,7 @@ export const Content = styled.div`
     }
   }
 
-  > p{
+  > p {
     font-size: 1.6rem;
     text-align: justify;
   }
@@ -78,4 +77,4 @@ export const Tag = styled.div`
   margin-top: 4rem;
   margin-bottom: 4rem;
   align-self: flex-start;
-`
+`;

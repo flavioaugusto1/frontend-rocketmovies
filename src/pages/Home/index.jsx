@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
+
+import { MagicMotion } from "react-magic-motion";
 
 import { Container, Title, Content } from "./styles";
 
@@ -13,38 +16,39 @@ import { api } from "../../services/api";
 export function Home() {
   const [notes, setNotes] = useState([]);
   const [search, setSearch] = useState("");
-  const [grade, setGrade] = useState(0);
+
+  const navigate = useNavigate();
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
+  }
 
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/notes/index?title=${search}`);
-      const rating = response.data.map((note) => {
-        return note.rating;
-      });
+
       setNotes(response.data);
-      setGrade(rating)
     }
 
     fetchNotes();
   }, [search]);
 
-  console.log(grade);
   return (
     <Container>
       <Header search={setSearch} />
-
       <Title>
         <h1>Meus filmes</h1>
         <Link to="/new">
           <Button title="Adicionar filme" icon={FiPlus} />
         </Link>
       </Title>
-
       <Content>
         <main>
-          {notes.map((note) => (
-            <Note isFilled key={String(note.id)} data={note}></Note>
-          ))}
+          <MagicMotion>
+            {notes.map((note) => (
+              <Note key={String(note.id)} data={note} onClick={() => handleDetails(note.id)} />
+            ))}
+          </MagicMotion>
         </main>
       </Content>
     </Container>

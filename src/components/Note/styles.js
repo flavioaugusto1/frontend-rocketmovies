@@ -11,13 +11,3 @@ export const Container = styled.div`
     margin-bottom: 0.8rem;
   }
 `;
-
-export const Image = styled.div`
-  width: 100%;
-  height: 1.2rem;
-
-  margin-bottom: 1.5rem;
-
-  display: flex;
-  align-items: center;
-`;

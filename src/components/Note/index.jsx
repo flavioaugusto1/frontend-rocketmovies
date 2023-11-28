@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Container, Image } from "./styles";
+import { Container } from "./styles";
 
 import { Tags } from "../Tags";
 
@@ -9,13 +9,6 @@ export function Note({ data, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
-      <Image>
-        <Stars isFilled />
-        <Stars isFilled />
-        <Stars isFilled />
-        <Stars isFilled />
-        <Stars />
-      </Image>
 
       <p>{data.description}</p>
 
