@@ -5,7 +5,7 @@ import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { api } from "../../services/api";
 import { Input } from "../Input";
 
-export function Header() {
+export function Header({ search, tag }) {
   const { signOut } = useAuth();
   const { user, updateProfile } = useAuth();
 
@@ -17,7 +17,10 @@ export function Header() {
     <Container>
       <h1>RocketMovies</h1>
 
-      <Input placeholder="Pesquisar pelo título" />
+      <Input
+        placeholder="Pesquisar pelo título"
+        onChange={(e) => search(e.target.value)}
+      />
 
       <div className="wrap">
         <div className="user">

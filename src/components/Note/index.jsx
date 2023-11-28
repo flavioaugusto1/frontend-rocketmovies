@@ -5,19 +5,19 @@ import { Tags } from "../Tags";
 
 import { Stars } from "../Stars";
 
-export function Note({ data, children, ...rest }) {
+export function Note({ data, ...rest }) {
   return (
     <Container {...rest}>
       <h1>{data.title}</h1>
       <Image>
         <Stars isFilled />
-        <Stars isFilled/>
-        <Stars isFilled/>
-        <Stars isFilled/>
+        <Stars isFilled />
+        <Stars isFilled />
+        <Stars isFilled />
         <Stars />
       </Image>
 
-      {children}
+      <p>{data.description}</p>
 
       {data.tags && (
         <footer>

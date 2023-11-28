@@ -47,7 +47,7 @@ export const Content = styled.div`
   grid-area: content;
 
   height: 71rem;
-  max-width: 113.7rem;
+  width: 100%;
   margin: 0 auto;
 
   overflow-y: auto;
@@ -66,8 +66,9 @@ export const Content = styled.div`
   }
 
   > main {
-    padding-right: 1.6rem;
-
+    max-width: 113.7rem;
+    margin: auto;
+    
     a {
       text-decoration: none;
     }

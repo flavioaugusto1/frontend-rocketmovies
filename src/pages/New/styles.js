@@ -17,7 +17,7 @@ export const Content = styled.div`
   }
 
   .wrap {
-    max-height: 78.3rem;
+    max-height: 74.3rem;
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -59,7 +59,7 @@ export const Form = styled.form`
     "textarea textarea"
     "tags tags"
     "button button";
-  gap: 4rem;
+  gap: 1.8rem;
 
   > div {
     input {
