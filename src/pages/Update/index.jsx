@@ -42,24 +42,27 @@ export function Update() {
 
   async function handleUpdateMovie() {
     if (newTag) {
-      return alert("Você esqueceu o marcador preenchido mas não adicionou.");
+      return alert(
+        "Você deixou um marcador preenchido e esquecer de adicionar."
+      );
     }
 
-    await api.post(`/notes/update/${params.id}`, {
+    await api.put(`/notes/update/${params.id}`, {
       title,
       rating,
       description,
       tags,
     });
 
-    alert("Nota cadastrada com sucesso");
-    navigate("/");
+    alert("Nota atualizada com sucesso!");
+    navigate(`/details/${params.id}`);
   }
 
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/notes/show/${params.id}`);
       const tags = response.data.tags.map((tag) => tag.name);
+
       setData(response.data);
       setTags(tags);
       setTitle(response.data.title);
@@ -69,6 +72,8 @@ export function Update() {
 
     fetchNotes();
   }, []);
+
+  console.log(newTag);
 
   return (
     <Container>
@@ -109,6 +114,7 @@ export function Update() {
                   ))}
                   <NoteItem
                     isNew
+                    value={newTag}
                     placeholder="Novo marcador"
                     onChange={(e) => setNewTag(e.target.value)}
                     onClick={handleAddTag}
@@ -117,7 +123,7 @@ export function Update() {
               </section>
 
               <div className="buttonSave">
-                <Button title=" Salvar Filme" onClick={handleUpdateMovie} />
+                <Button title="Salvar alterações" onClick={handleUpdateMovie} />
               </div>
             </Form>
           </div>
