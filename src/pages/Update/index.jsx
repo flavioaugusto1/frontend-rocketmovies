@@ -15,7 +15,7 @@ import { Button } from "../../components/Button";
 export function Update() {
   const [data, setData] = useState(null);
   const [title, setTitle] = useState("");
-  const [grade, setGrade] = useState(0);
+  const [rating, setRating] = useState(0);
   const [description, setDescription] = useState("");
 
   const [tags, setTags] = useState([]);
@@ -47,7 +47,7 @@ export function Update() {
 
     await api.post(`/notes/update/${params.id}`, {
       title,
-      rating: grade,
+      rating,
       description,
       tags,
     });
@@ -62,6 +62,9 @@ export function Update() {
       const tags = response.data.tags.map((tag) => tag.name);
       setData(response.data);
       setTags(tags);
+      setTitle(response.data.title);
+      setRating(response.data.rating);
+      setDescription(response.data.description);
     }
 
     fetchNotes();
@@ -81,16 +84,16 @@ export function Update() {
               <Input
                 placeholder="Título"
                 onChange={(e) => setTitle(e.target.value)}
-                value={data.title}
+                value={title}
               />
               <Input
                 placeholder="Sua nota de (0 a 5)"
-                onChange={(e) => setGrade(Number(e.target.value))}
-                value={data.rating}
+                onChange={(e) => setRating(Number(e.target.value))}
+                value={rating}
               />
               <TextArea
                 placeholder="Observações"
-                value={data.description}
+                value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
 
