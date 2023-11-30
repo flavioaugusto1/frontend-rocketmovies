@@ -37,6 +37,10 @@ export function Details() {
     }
   }
 
+  function handleUpdateMovie(id) {
+    navigate(`/update/${id}`);
+  }
+
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/notes/show/${params.id}`);
@@ -102,7 +106,11 @@ export function Details() {
               className="deleteMovie"
               onClick={handleDeleteMovie}
             />
-            <Button title="Editar filme" className="updateMovie" />
+            <Button
+              title="Editar filme"
+              className="updateMovie"
+              onClick={() => handleUpdateMovie(data.id)}
+            />
           </div>
         </Content>
       )}
