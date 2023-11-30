@@ -35,15 +35,6 @@ export const Content = styled.div`
 
     padding-right: 2.4rem;
 
-    > button {
-      font-size: 1.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-    }
-
     > h1 {
       font-size: 3.6rem;
       margin: 2.4rem 0 4rem 0;
@@ -98,8 +89,13 @@ export const Form = styled.form`
     }
   }
 
-  .delete {
-    background: ${({ theme }) => theme.COLORS.BLACK};
-    color: ${({ theme }) => theme.COLORS.PINK};
+  .buttonSave {
+    grid-column: 2;
+    justify-self: end;
+    width: 100%;
+
+    > button {
+      width: 100%;
+    }
   }
 `;

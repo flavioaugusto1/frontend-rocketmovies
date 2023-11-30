@@ -95,8 +95,9 @@ export function New() {
               </div>
             </section>
 
-            <Button title="Excluir filme" className="delete" />
-            <Button title=" Salvar alterações" onClick={handleNewMovie} />
+            <div className="buttonSave">
+              <Button title=" Salvar Filme" onClick={handleNewMovie} />
+            </div>
           </Form>
         </div>
       </Content>

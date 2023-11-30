@@ -19,7 +19,7 @@ export const Content = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-
+  
   > header {
     footer {
       display: flex;
@@ -51,6 +51,24 @@ export const Content = styled.div`
   > p {
     font-size: 1.6rem;
     text-align: justify;
+  }
+
+  .wrap-buttons {
+    margin-top: 8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    
+    >button {
+      width: 100%;
+    }
+
+    > .deleteMovie {
+      background: ${({ theme }) => theme.COLORS.BLACK};
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
   }
 `;
 

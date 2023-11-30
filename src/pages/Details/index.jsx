@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
 import { FiClock } from "react-icons/fi";
@@ -10,6 +11,7 @@ import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { Header } from "../../components/Header";
 import { ButtonText } from "../../components/ButtonText";
 import { Tags } from "../../components/Tags";
+import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
 export function Details() {
@@ -23,6 +25,17 @@ export function Details() {
     : avatarPlaceholder;
 
   const params = useParams();
+  const navigate = useNavigate();
+
+  async function handleDeleteMovie() {
+    if (confirm("Tem certeza que deseja excluir esse filme?")) {
+      const response = await api.delete(`/notes/delete/${params.id}`);
+      navigate("/");
+      return;
+    } else {
+      return;
+    }
+  }
 
   useEffect(() => {
     async function fetchNotes() {
@@ -82,6 +95,15 @@ export function Details() {
           )}
 
           <p>{data.description}</p>
+
+          <div className="wrap-buttons">
+            <Button
+              title="Excluir filme"
+              className="deleteMovie"
+              onClick={handleDeleteMovie}
+            />
+            <Button title="Editar filme" className="updateMovie" />
+          </div>
         </Content>
       )}
     </Container>
