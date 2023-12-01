@@ -19,7 +19,7 @@ export const Content = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  
+
   > header {
     footer {
       display: flex;
@@ -60,8 +60,8 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    
-    >button {
+
+    > button {
       width: 100%;
     }
 

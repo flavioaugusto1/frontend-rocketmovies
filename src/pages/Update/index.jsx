@@ -47,6 +47,12 @@ export function Update() {
       );
     }
 
+    const verifyValueRating = rating > 5 || rating < 0;
+
+    if (verifyValueRating) {
+      return alert("A nota deve ser informado entre 0 e 5.");
+    }
+
     await api.put(`/notes/update/${params.id}`, {
       title,
       rating,
@@ -73,8 +79,6 @@ export function Update() {
     fetchNotes();
   }, []);
 
-  console.log(newTag);
-
   return (
     <Container>
       <Header />
@@ -88,13 +92,14 @@ export function Update() {
             <Form>
               <Input
                 placeholder="Título"
-                onChange={(e) => setTitle(e.target.value)}
                 value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <Input
                 placeholder="Sua nota de (0 a 5)"
-                onChange={(e) => setRating(Number(e.target.value))}
+                type="number"
                 value={rating}
+                onChange={(e) => setRating(e.target.value)}
               />
               <TextArea
                 placeholder="Observações"

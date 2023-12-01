@@ -10,4 +10,8 @@ export const Container = styled.div`
     font-size: 2.4rem;
     margin-bottom: 0.8rem;
   }
+
+  > p {
+    margin-top: 1.5rem;
+  }
 `;

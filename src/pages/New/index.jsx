@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 export function New() {
   const [title, setTitle] = useState("");
-  const [grade, setGrade] = useState(0);
+  const [rating, setRating] = useState(0);
   const [description, setDescription] = useState("");
 
   const [tags, setTags] = useState([]);
@@ -41,7 +41,7 @@ export function New() {
 
     await api.post("/notes", {
       title,
-      rating: grade,
+      rating,
       description,
       tags,
     });
@@ -68,7 +68,7 @@ export function New() {
             />
             <Input
               placeholder="Sua nota de (0 a 5)"
-              onChange={(e) => setGrade(Number(e.target.value))}
+              onChange={(e) => setRating(Number(e.target.value))}
             />
             <TextArea
               placeholder="Observações"

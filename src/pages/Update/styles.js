@@ -52,6 +52,10 @@ export const Form = styled.form`
     "button button";
   gap: 1.8rem;
 
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
   > div {
     input {
       font-size: 1.6rem;

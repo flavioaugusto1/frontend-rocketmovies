@@ -46,7 +46,11 @@ export function Home() {
         <main>
           <MagicMotion>
             {notes.map((note) => (
-              <Note key={String(note.id)} data={note} onClick={() => handleDetails(note.id)} />
+              <Note
+                key={String(note.id)}
+                data={note}
+                onClick={() => handleDetails(note.id)}
+              />
             ))}
           </MagicMotion>
         </main>

@@ -9,6 +9,8 @@ import { Container, Content, Title, Tag } from "./styles";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { Header } from "../../components/Header";
+import Star from "../../assets/star.svg";
+import { Rating } from "../../components/Rating";
 import { ButtonText } from "../../components/ButtonText";
 import { Tags } from "../../components/Tags";
 import { Button } from "../../components/Button";
@@ -74,6 +76,7 @@ export function Details() {
 
             <Title>
               <h1>{data.title}</h1>
+              <Rating data={data.rating} />
             </Title>
 
             <footer>
