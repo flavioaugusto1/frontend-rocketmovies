@@ -23,7 +23,8 @@ export function Profile() {
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceholder;
-  const [avatar, setAvatar] = useState(user.avatar);
+
+  const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
 
   async function handleUpdate() {
@@ -55,7 +56,7 @@ export function Profile() {
 
       <Form>
         <Avatar>
-          <img src={avatarUrl} alt="Imagem do usuário" />
+          <img src={avatar} alt="Imagem do usuário" />
           <label htmlFor="avatar">
             <FiCamera />
             <input id="avatar" type="file" onChange={handleChangeAvatar} />
