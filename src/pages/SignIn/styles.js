@@ -44,6 +44,7 @@ export const Form = styled.form`
 
   > button {
     margin-top: 2.4rem;
+    width: 100%;
   }
 
   > a {

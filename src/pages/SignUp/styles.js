@@ -35,12 +35,13 @@ export const Form = styled.form`
 
   > button {
     margin-top: 2.4rem;
+    width: 100%;
   }
 
   > h2 {
     font-size: 2.4rem;
     font-weight: 500;
-    
+
     align-self: flex-start;
 
     margin-bottom: 4.8rem;
@@ -55,7 +56,7 @@ export const Form = styled.form`
 
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 `;
 

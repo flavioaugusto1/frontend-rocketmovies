@@ -10,7 +10,7 @@ export const Container = styled.div`
     width: 100%;
     height: 14.4rem;
 
-    a{
+    a {
       text-decoration: none;
     }
 
@@ -79,5 +79,6 @@ export const Form = styled.form`
 
   > button {
     margin-top: 2.4rem;
+    width: 100%;
   }
 `;

@@ -97,8 +97,8 @@ export function Update() {
               />
               <Input
                 placeholder="Sua nota de (0 a 5)"
-                type="number"
-                value={rating}
+                mask="9.9"
+                value={String(rating)}
                 onChange={(e) => setRating(e.target.value)}
               />
               <TextArea
