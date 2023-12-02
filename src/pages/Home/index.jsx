@@ -36,25 +36,27 @@ export function Home() {
   return (
     <Container>
       <Header search={setSearch} />
-      <Title>
-        <h1>Meus filmes</h1>
-        <Link to="/new">
-          <Button title="Adicionar filme" icon={FiPlus} />
-        </Link>
-      </Title>
-      <Content>
-        <main>
-          <MagicMotion>
-            {notes.map((note) => (
-              <Note
-                key={String(note.id)}
-                data={note}
-                onClick={() => handleDetails(note.id)}
-              />
-            ))}
-          </MagicMotion>
-        </main>
-      </Content>
+      <div className="wrap-content">
+        <Title>
+          <h1>Meus filmes</h1>
+          <Link to="/new">
+            <Button title="Adicionar filme" icon={FiPlus} />
+          </Link>
+        </Title>
+        <Content>
+          <main>
+            <MagicMotion>
+              {notes.map((note) => (
+                <Note
+                  key={String(note.id)}
+                  data={note}
+                  onClick={() => handleDetails(note.id)}
+                />
+              ))}
+            </MagicMotion>
+          </main>
+        </Content>
+      </div>
     </Container>
   );
 }

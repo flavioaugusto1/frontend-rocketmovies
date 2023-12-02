@@ -10,18 +10,22 @@ export const Container = styled.div`
     "header"
     "title"
     "content";
+
+  .wrap-content {
+    max-width: 112rem;
+    margin: 2rem auto 0;
+    padding: 2rem;
+  }
 `;
 
 export const Title = styled.div`
   grid-area: title;
 
-  width: 113.7rem;
-  margin: 0 auto;
-
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
 
   > h1 {
     font-size: 3.2rem;
@@ -47,7 +51,8 @@ export const Content = styled.div`
   grid-area: content;
 
   height: 71rem;
-  width: 113.7rem;
+  width: 100%;
+  padding: 1rem;
   margin: 0 auto;
 
   overflow-y: auto;
