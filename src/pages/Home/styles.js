@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../Styles/deviceBreakpoints";
 
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.6rem 13.3rem auto;
   grid-template-areas:
     "header"
     "title"
@@ -43,6 +43,12 @@ export const Title = styled.div`
       align-items: center;
       justify-content: center;
       gap: 0.8rem;
+    }
+  }
+
+  @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    .newMovie {
+      display: none;
     }
   }
 `;

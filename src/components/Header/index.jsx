@@ -1,11 +1,11 @@
-import { Container, Profile } from "./styles";
+import { Container, Profile, SideMenuIcon } from "./styles";
 import { useAuth } from "../../hooks/auth";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { api } from "../../services/api";
 import { Input } from "../Input";
 
-export function Header({ search, tag }) {
+export function Header({ search, tag, onOpenMenu }) {
   const { signOut } = useAuth();
   const { user, updateProfile } = useAuth();
 
@@ -17,12 +17,14 @@ export function Header({ search, tag }) {
     <Container>
       <h1>RocketMovies</h1>
 
+      <SideMenuIcon onClick={onOpenMenu} />
+
       <Input
         placeholder="Pesquisar pelo título"
         onChange={(e) => search(e.target.value)}
       />
 
-      <div className="wrap">
+      <div className="wrap-profile">
         <div className="user">
           <Profile to="/profile">
             <p>{user.name}</p>
