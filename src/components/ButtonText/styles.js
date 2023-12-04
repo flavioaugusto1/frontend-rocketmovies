@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.a`
+  width: fit-content;
   background: none;
   border: none;
 
@@ -9,9 +10,9 @@ export const Container = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  gap: .8rem;
+  gap: 0.8rem;
 
   cursor: pointer;
 `;

@@ -10,7 +10,6 @@ import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
 
 export function New() {
   const [title, setTitle] = useState("");
@@ -21,6 +20,10 @@ export function New() {
   const [newTag, setNewTag] = useState("");
 
   const navigate = new useNavigate();
+
+  function handleBackPage() {
+    navigate(-1);
+  }
 
   function handleAddTag() {
     if (!newTag) {
@@ -55,50 +58,50 @@ export function New() {
       <Header />
 
       <Content>
-        <Link to="/">
-          <ButtonText title="Voltar" />
-        </Link>
+        <div className="wrap-content">
+          <ButtonText title="Voltar" onClick={handleBackPage} />
 
-        <div className="wrap">
-          <h1>Novo Filme</h1>
-          <Form>
-            <Input
-              placeholder="Título"
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <Input
-              placeholder="Sua nota de (0 a 5)"
-              onChange={(e) => setRating(Number(e.target.value))}
-            />
-            <TextArea
-              placeholder="Observações"
-              onChange={(e) => setDescription(e.target.value)}
-            />
+          <div className="wrap">
+            <h1>Novo Filme</h1>
+            <Form>
+              <Input
+                placeholder="Título"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <Input
+                placeholder="Sua nota de (0 a 5)"
+                onChange={(e) => setRating(Number(e.target.value))}
+              />
+              <TextArea
+                placeholder="Observações"
+                onChange={(e) => setDescription(e.target.value)}
+              />
 
-            <section>
-              <h2>Marcadores</h2>
-              <div>
-                {tags.map((tag, index) => (
+              <section>
+                <h2>Marcadores</h2>
+                <div>
+                  {tags.map((tag, index) => (
+                    <NoteItem
+                      key={String(index)}
+                      value={tag}
+                      onClick={() => handleRemoveTag(tag)}
+                    />
+                  ))}
                   <NoteItem
-                    key={String(index)}
-                    value={tag}
-                    onClick={() => handleRemoveTag(tag)}
+                    isNew
+                    placeholder="Novo marcador"
+                    value={newTag}
+                    onChange={(e) => setNewTag(e.target.value)}
+                    onClick={handleAddTag}
                   />
-                ))}
-                <NoteItem
-                  isNew
-                  placeholder="Novo marcador"
-                  value={newTag}
-                  onChange={(e) => setNewTag(e.target.value)}
-                  onClick={handleAddTag}
-                />
-              </div>
-            </section>
+                </div>
+              </section>
 
-            <div className="buttonSave">
-              <Button title=" Salvar Filme" onClick={handleNewMovie} />
-            </div>
-          </Form>
+              <div className="buttonSave">
+                <Button title=" Salvar Filme" onClick={handleNewMovie} />
+              </div>
+            </Form>
+          </div>
         </div>
       </Content>
     </Container>

@@ -3,14 +3,16 @@ import { styled } from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 `;
 
 export const Content = styled.div`
-  margin-top: 4.6rem;
+  width: 100%;
+
+  .wrap-content {
+    max-width: 113rem;
+    margin: 4.6rem auto 0;
+    padding: 0 2.4rem 2.4rem;
+  }
 
   a {
     text-decoration: none;
@@ -33,8 +35,6 @@ export const Content = styled.div`
       border-radius: 8px;
     }
 
-    padding-right: 2.4rem;
-
     > h1 {
       font-size: 3.6rem;
       margin: 2.4rem 0 4rem 0;
@@ -44,7 +44,7 @@ export const Content = styled.div`
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: 53.6rem 53.6rem;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "inputs inputs"
     "textarea textarea"
