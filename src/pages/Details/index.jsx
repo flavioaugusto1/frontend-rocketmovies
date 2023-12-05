@@ -9,7 +9,7 @@ import { Container, Content, Title, Tag } from "./styles";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 
 import { Header } from "../../components/Header";
-import Star from "../../assets/star.svg";
+import { SideMenu } from "../../components/SideMenu";
 import { Rating } from "../../components/Rating";
 import { ButtonText } from "../../components/ButtonText";
 import { Tags } from "../../components/Tags";
@@ -20,6 +20,7 @@ export function Details() {
   const [data, setData] = useState(null);
   const [date, setDate] = useState("");
   const [hours, setHours] = useState("");
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const { user } = useAuth();
 
   const avatarUrl = user.avatar
@@ -65,7 +66,11 @@ export function Details() {
 
   return (
     <Container>
-      <Header />
+      <Header onOpenMenu={() => setMenuIsOpen(true)} />
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
 
       {data && (
         <Content>

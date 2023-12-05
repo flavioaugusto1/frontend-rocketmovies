@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
 import { Header } from "../../components/Header";
+import { SideMenu } from "../../components/SideMenu";
 import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
@@ -15,6 +16,7 @@ export function New() {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState(0);
   const [description, setDescription] = useState("");
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
@@ -55,7 +57,11 @@ export function New() {
 
   return (
     <Container>
-      <Header />
+      <Header onOpenMenu={() => setMenuIsOpen(true)} />
+      <SideMenu
+        menuIsOpen={menuIsOpen}
+        onCloseMenu={() => setMenuIsOpen(false)}
+      />
 
       <Content>
         <div className="wrap-content">

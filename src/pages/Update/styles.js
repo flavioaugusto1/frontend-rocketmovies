@@ -20,7 +20,7 @@ export const Content = styled.div`
   }
 
   .wrap {
-    max-height: 74.3rem;
+    max-height: 60rem;
     overflow: auto;
 
     &::-webkit-scrollbar {

@@ -4,13 +4,14 @@ import { FiX } from "react-icons/fi";
 
 export const Container = styled.aside`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
 
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
 
   position: absolute;
+  top: 0;
 
   background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
@@ -29,8 +30,8 @@ export const Container = styled.aside`
       padding: 2rem;
       cursor: pointer;
 
-      &:hover{
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};;
+      &:hover {
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
       }
     }
 

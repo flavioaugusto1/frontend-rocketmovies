@@ -4,6 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../Styles/deviceBreakpoints";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+  position: relative;
 `;
 
 export const Content = styled.div`
@@ -11,6 +12,7 @@ export const Content = styled.div`
 
   .wrap-content {
     max-width: 113rem;
+    height: 100%;
     margin: 4.6rem auto 0;
     padding: 0 2.4rem 2.4rem;
   }
@@ -20,7 +22,7 @@ export const Content = styled.div`
   }
 
   .wrap {
-    max-height: 74.3rem;
+    max-height: 60rem;
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -45,7 +47,6 @@ export const Content = styled.div`
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "inputs inputs"
     "textarea textarea"
