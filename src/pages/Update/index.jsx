@@ -84,55 +84,60 @@ export function Update() {
       <Header />
 
       <Content>
-        <ButtonText title="Voltar" onClick={handleReturnPage} />
+        <div className="wrap-content">
+          <ButtonText title="Voltar" onClick={handleReturnPage} />
 
-        {data && (
-          <div className="wrap">
-            <h1>Editar filme</h1>
-            <Form>
-              <Input
-                placeholder="Título"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <Input
-                placeholder="Sua nota de (0 a 5)"
-                mask="9.9"
-                value={String(rating)}
-                onChange={(e) => setRating(e.target.value)}
-              />
-              <TextArea
-                placeholder="Observações"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
+          {data && (
+            <div className="wrap">
+              <h1>Editar filme</h1>
+              <Form>
+                <Input
+                  placeholder="Título"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+                <Input
+                  placeholder="Sua nota de (0 a 5)"
+                  mask="9.9"
+                  value={String(rating)}
+                  onChange={(e) => setRating(e.target.value)}
+                />
+                <TextArea
+                  placeholder="Observações"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
 
-              <section>
-                <h2>Marcadores</h2>
-                <div>
-                  {tags.map((tag, index) => (
+                <section>
+                  <h2>Marcadores</h2>
+                  <div>
+                    {tags.map((tag, index) => (
+                      <NoteItem
+                        key={String(index)}
+                        value={tag}
+                        onClick={() => handleRemoveTag(tag)}
+                      />
+                    ))}
                     <NoteItem
-                      key={String(index)}
-                      value={tag}
-                      onClick={() => handleRemoveTag(tag)}
+                      isNew
+                      value={newTag}
+                      placeholder="Novo marcador"
+                      onChange={(e) => setNewTag(e.target.value)}
+                      onClick={handleAddTag}
                     />
-                  ))}
-                  <NoteItem
-                    isNew
-                    value={newTag}
-                    placeholder="Novo marcador"
-                    onChange={(e) => setNewTag(e.target.value)}
-                    onClick={handleAddTag}
+                  </div>
+                </section>
+
+                <div className="buttonSave">
+                  <Button
+                    title="Salvar alterações"
+                    onClick={handleUpdateMovie}
                   />
                 </div>
-              </section>
-
-              <div className="buttonSave">
-                <Button title="Salvar alterações" onClick={handleUpdateMovie} />
-              </div>
-            </Form>
-          </div>
-        )}
+              </Form>
+            </div>
+          )}
+        </div>
       </Content>
     </Container>
   );
