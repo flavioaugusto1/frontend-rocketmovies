@@ -11,6 +11,9 @@ export const Container = styled.div`
     height: 14.4rem;
 
     a {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
       text-decoration: none;
     }
 
@@ -72,6 +75,8 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 2rem;
 
   :nth-child(4) {
     margin-top: 2rem;
