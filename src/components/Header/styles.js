@@ -5,7 +5,7 @@ import { FiMenu } from "react-icons/fi";
 
 export const Container = styled.header`
   width: 100%;
-  height: 11.6rem;
+  height: 8rem;
 
   grid-area: header;
 
@@ -51,15 +51,21 @@ export const Container = styled.header`
     }
   }
 
+  .search-film {
+      width: 100%;
+    }
+
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
     grid-template-columns: auto 1fr;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
 
-    h1 {
+    .wrap-profile {
       display: none;
     }
-    .wrap-profile {
+
+    .search-film {
       display: none;
     }
 

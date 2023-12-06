@@ -8,6 +8,7 @@ import { Container, Title, Content } from "./styles";
 
 import { Header } from "../../components/Header";
 import { SideMenu } from "../../components/SideMenu";
+import { Input } from "../../components/Input";
 import { Note } from "../../components/Note";
 import { Button } from "../../components/Button";
 
@@ -47,8 +48,19 @@ export function Home() {
         <Title>
           <h1>Meus filmes</h1>
           <Link to="/new">
-            <Button title="Adicionar filme" icon={FiPlus} className="newMovie" />
+            <Button
+              title="Adicionar filme"
+              icon={FiPlus}
+              className="newMovie"
+            />
           </Link>
+
+          <div className="search-film">
+            <Input
+              placeholder="Pesquisar pelo título"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </Title>
         <Content>
           <main>

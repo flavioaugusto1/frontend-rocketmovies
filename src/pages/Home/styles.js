@@ -32,7 +32,7 @@ export const Title = styled.div`
     font-weight: 400;
   }
 
-  a {
+  > a {
     text-decoration: none;
     > button {
       width: 20rem;
@@ -46,7 +46,22 @@ export const Title = styled.div`
     }
   }
 
+  > .search-film {
+    display: none;
+  }
+
   @media (max-width: ${DEVICE_BREAKPOINTS.SM}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+
+    .search-film {
+      display: block;
+      width: 100%;
+    }
+
     .newMovie {
       display: none;
     }

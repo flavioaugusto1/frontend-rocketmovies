@@ -15,14 +15,15 @@ export function Header({ search, tag, onOpenMenu }) {
 
   return (
     <Container>
+      <SideMenuIcon onClick={onOpenMenu} />
       <h1>RocketMovies</h1>
 
-      <SideMenuIcon onClick={onOpenMenu} />
-
-      <Input
-        placeholder="Pesquisar pelo título"
-        onChange={(e) => search(e.target.value)}
-      />
+      <div className="search-film">
+        <Input
+          placeholder="Pesquisar pelo título"
+          onChange={(e) => search(e.target.value)}
+        />
+      </div>
 
       <div className="wrap-profile">
         <div className="user">
