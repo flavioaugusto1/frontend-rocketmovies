@@ -71,7 +71,7 @@ export const Title = styled.div`
 export const Content = styled.div`
   grid-area: content;
 
-  height: 60rem;
+  height: 55rem;
   width: 100%;
   padding: 1rem;
   margin: 0 auto;
