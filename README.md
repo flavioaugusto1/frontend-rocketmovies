@@ -5,6 +5,8 @@ Projeto feito como desáfio no curso Explorer da Rocketseat. O projeto consiste 
 - Execute primeiro o backend para depois prosseguir com os passos abaixo:
 [Backend do projeto](https://github.com/flavioaugusto1/backend-rocketmovies)
 
+Link do projeto: https://roocket-movies.netlify.app/
+
 ## Instalação
 
 Lembre de ter o Node.js instalado em sua máquina para que consiga executar o projeto.
