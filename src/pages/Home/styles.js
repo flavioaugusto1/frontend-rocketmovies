@@ -25,6 +25,7 @@ export const Title = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10rem;
   margin-bottom: 2rem;
 
   > h1 {
